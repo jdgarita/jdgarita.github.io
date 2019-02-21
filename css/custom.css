@@ -253,7 +253,7 @@ h4 {
 }
 
 .content-first {
-	background-color:#34495E;
+	background-color:#607D8B;
 	padding:80px 0;
 	color:#FFFFFF;
 	border-top:8px solid rgba(0,0,0,0.1);
@@ -261,7 +261,7 @@ h4 {
 }
 
 .content-second {
-	background-color:#1ABC9C;
+	background-color:#CFD8DC;
 	padding:80px 0;
 	color:#FFFFFF;
 	border-top:8px solid rgba(0,0,0,0.1);
@@ -376,7 +376,7 @@ h4 {
 
 .navbar-default {
 	margin:0;
-	background-color:#2C3E50;
+	background-color:#455A64;
 	border:none;
 	border-radius:0;
 	height:78px;
@@ -427,7 +427,7 @@ h4 {
 
 .navbar-collapse {
 	margin:0;
-	background-color:#2C3E50;
+	background-color:#455A64;
 	border:none;
 	border-radius:0;
 	padding-top:3px;
@@ -443,12 +443,12 @@ h4 {
 
 header {
 	text-align:center;
-	background-color:#2F4254;
+	background-color:#607D8B;
 }
 
 .jumbotron {
 	margin:0;
-  	background-color:#2F4254;
+  	background-color:#607D8B;
 }
 
 .jumbotron img {
