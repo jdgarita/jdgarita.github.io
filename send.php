@@ -1,25 +1,25 @@
 <?php
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message'])) {
-	require 'PHPMailerAutoload.php';
 	
-	$firstname = 	$_POST['firstname'];
-	$lastname = 	$_POST['lastname'];
-	$email = 		$_POST['email'];
-	$message = 		$_POST['message'];
-	
-	$mail = new PHPMailer();
-	
-	$mail->From = $email;
-	$mail->CharSet = "UTF-8";
-	$mail->FromName = $email;
-	$mail->addAddress("juandiegogarita@gmail.com"); 
-	
-	$mail->IsHTML(true);
-	$mail->Subject = $name."test";
-	
-	$mail->Body = $message."<br><br>".$name."<br>".$email."<br>".$phone."<br>";
+require 'PHPMailerAutoload.php';
 
-	$mail->send();
+$firstname = 	$_POST['firstname'];
+$lastname = 	$_POST['lastname'];
+$email = 		$_POST['email'];
+$message = 		$_POST['message'];
+
+
+$mail = new PHPMailer;
+$mail->setFrom($email, $firstname);
+$mail->addAddress('juandiegogarita@gmail.com', 'jd');
+$mail->Subject  = 'First PHPMailer Message';
+$mail->Body     = $message;
+	if(!$mail->send()) {
+	echo 'Message was not sent.';
+	echo 'Mailer error: ' . $mail->ErrorInfo;
+	} else {
+	echo 'Message has been sent.';
+	}
 }
 ?>   
             
