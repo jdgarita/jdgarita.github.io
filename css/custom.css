@@ -252,6 +252,13 @@ h4 {
 	margin-top:0;
 }
 
+.border_image {
+	border-bottom-width: 20px;
+	border-top-width: 20px;
+	border-style: solid; 
+	border-color: #CFD8DC;
+}
+
 .content-first {
 	background-color:#607D8B;
 	padding:80px 0;
