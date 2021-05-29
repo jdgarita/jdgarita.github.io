@@ -1,2 +1,2 @@
-# juandiegogarita.github.io
+# portfolio
 Profile
