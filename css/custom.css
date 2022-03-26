@@ -256,7 +256,7 @@ h4 {
 	border-bottom-width: 20px;
 	border-top-width: 20px;
 	border-style: solid; 
-	border-color: #CFD8DC;
+	border-color: #2F4254;
 }
 
 .content-first {
@@ -268,7 +268,7 @@ h4 {
 }
 
 .content-second {
-	background-color:#CFD8DC;
+	background-color:#2F4254;
 	padding:80px 0;
 	color:#FFFFFF;
 	border-top:8px solid rgba(0,0,0,0.1);
@@ -732,7 +732,7 @@ header {
 
 .showcase-icon {
 	font-size:70px;
-	color:#34495E;
+	color:#CFD8DC;
 	display:inline-block;
 	width:80px;
 	text-align:center;
