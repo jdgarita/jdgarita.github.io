@@ -18,19 +18,19 @@ import org.jetbrains.compose.web.css.vh
 
 private const val COLOR_MODE_KEY = "jdgarita:colorMode"
 
-@InitSilk
-fun initColorMode(ctx: InitSilkContext) {
-    ctx.config.initialColorMode = localStorage.getItem(COLOR_MODE_KEY)?.let { ColorMode.valueOf(it) } ?: ColorMode.DARK
-}
+//@InitSilk
+//fun initColorMode(ctx: InitSilkContext) {
+//    ctx.config.initialColorMode = localStorage.getItem(COLOR_MODE_KEY)?.let { ColorMode.valueOf(it) } ?: ColorMode.DARK
+//}
 
 @App
 @Composable
 fun AppEntry(content: @Composable () -> Unit) {
     SilkApp {
-        val colorMode = ColorMode.current
-        LaunchedEffect(colorMode) {
-            localStorage.setItem(COLOR_MODE_KEY, colorMode.name)
-        }
+//        val colorMode = ColorMode.current
+//        LaunchedEffect(colorMode) {
+//            localStorage.setItem(COLOR_MODE_KEY, colorMode.name)
+//        }
 
         Surface(
             SmoothColorStyle.toModifier()
