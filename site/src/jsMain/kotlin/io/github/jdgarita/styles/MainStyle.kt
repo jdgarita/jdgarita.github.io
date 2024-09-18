@@ -44,6 +44,17 @@ val MiniMeStyle = CssStyle {
     }
 }
 
+val SocialLinkStyle = CssStyle {
+    base {
+        Modifier
+            .color(Theme.Gray.rgb)
+            .transition(CSSTransition(property = "color", duration = 200.ms))
+    }
+    hover {
+        Modifier.color(Theme.Primary.rgb)
+    }
+}
+
 val MainButtonStyle = CssStyle {
     base {
         Modifier

@@ -1,10 +1,7 @@
-package io.github.jdgarita.components.layouts
+package io.github.jdgarita.components.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.Cursor
-import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.ObjectFit
-import com.varabyte.kobweb.compose.css.TextDecorationLine
+import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -27,6 +24,7 @@ import io.github.jdgarita.models.Theme
 import io.github.jdgarita.styles.MainButtonStyle
 import io.github.jdgarita.styles.MainImageStyle
 import io.github.jdgarita.util.Constants.FONT_FAMILY
+import io.github.jdgarita.util.Constants.SECTION_WIDTH
 import io.github.jdgarita.util.Res
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -35,11 +33,11 @@ import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-internal fun Main(onMenuClicked: () -> Unit) {
+internal fun MainSection(onMenuClicked: () -> Unit) {
     Box(
         modifier = Modifier
             .id(Section.Home.id)
-            .fillMaxWidth(),
+            .maxWidth(SECTION_WIDTH.px),
         contentAlignment = Alignment.TopCenter
     ) {
         MainBackground()
@@ -124,6 +122,19 @@ private fun MainText(breakpoint: Breakpoint) {
                     .color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
+                Text("Sr Mobile Developer")
+            }
+            P(
+                attrs = Modifier
+                    .margin(bottom = 25.px)
+                    .maxWidth(400.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontSize(15.px)
+                    .fontStyle(FontStyle.Italic)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Secondary.rgb)
+                    .toAttrs()
+            ) {
                 Text("Kotlin Multiplatform Developer")
             }
             Button(
@@ -156,8 +167,8 @@ private fun MainImage() {
     ) {
         Image(
             modifier = MainImageStyle.toModifier().fillMaxWidth(),
-            src = Res.Image.main,
-            alt = "Main Image"
+            src = Res.Image.jd,
+            alt = "JD"
         )
     }
 }

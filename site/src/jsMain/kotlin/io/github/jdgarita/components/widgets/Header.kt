@@ -21,7 +21,6 @@ import io.github.jdgarita.util.Constants.FONT_FAMILY
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
-
 @Composable
 fun Header(onMenuClicked: () -> Unit) {
     val breakpoint = rememberBreakpoint()
@@ -58,6 +57,7 @@ fun LeftSide(
                 size = IconSize.XL
             )
         }
+        SocialBar()
     }
 }
 
@@ -66,7 +66,7 @@ fun RightSide() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .borderRadius(r = 20.px)
+            .borderRadius(r = 50.px)
             .backgroundColor(Theme.LighterGray.rgb)
             .padding(all = 20.px),
         horizontalArrangement = Arrangement.End
