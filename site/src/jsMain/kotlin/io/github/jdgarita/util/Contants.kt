@@ -1,7 +1,8 @@
 package io.github.jdgarita.util
 
 object Constants {
-    const val WEBSITE = "https://stevdza-san.com/"
+    const val LINKEDIN = "https://www.linkedin.com/in/jdgarita/"
+    const val GITHUB = "https://github.com/jdgarita"
     const val SECTION_WIDTH = 1920
     const val FONT_FAMILY = "Roboto"
 }
@@ -24,8 +25,8 @@ object Res {
     object Image {
         const val background = "background.svg"
         const val mini_me = "logo.svg"
-        const val main = "main_image.png"
-        const val about = "about_image.png"
+        const val jd = "jd.png"
+        const val certification = "certification_badge.png"
         const val portfolio1 = "portfolio1.png"
         const val portfolio2 = "portfolio2.png"
         const val portfolio3 = "portfolio3.png"
