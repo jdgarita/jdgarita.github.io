@@ -1,6 +1,6 @@
 site:
   title: "JD Garita"
-
+  routePrefix: "jdgarita.github.io"
 server:
   files:
     dev:
