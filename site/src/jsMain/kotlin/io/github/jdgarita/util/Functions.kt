@@ -7,20 +7,21 @@ import kotlinx.coroutines.delay
 import org.w3c.dom.events.EventListener
 
 @Composable
-fun ObserveViewportEntered(
+internal fun ObserveViewportEntered(
     sectionId: String,
     distanceFromTop: Double,
-    onViewportEntered: () -> Unit
+    onViewportEntered: () -> Unit,
 ) {
     var viewportEntered by remember { mutableStateOf(false) }
-    val listener = remember {
-        EventListener {
-            val top = document.getElementById(sectionId)?.getBoundingClientRect()?.top
-            if (top != null && top < distanceFromTop) {
-                viewportEntered = true
+    val listener =
+        remember {
+            EventListener {
+                val top = document.getElementById(sectionId)?.getBoundingClientRect()?.top
+                if (top != null && top < distanceFromTop) {
+                    viewportEntered = true
+                }
             }
         }
-    }
 
     LaunchedEffect(viewportEntered) {
         if (viewportEntered) {
@@ -35,7 +36,7 @@ fun ObserveViewportEntered(
 suspend fun animateNumbers(
     number: Int,
     delay: Long = 10L,
-    onUpdate: (Int) -> Unit
+    onUpdate: (Int) -> Unit,
 ) {
     (0..number).forEach {
         delay(delay)

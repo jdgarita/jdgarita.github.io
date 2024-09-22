@@ -1,7 +1,6 @@
-package io.github.jdgarita.components.widgets
+package io.github.jdgarita.components
 
 import androidx.compose.runtime.Composable
-
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -18,58 +17,64 @@ import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun SkillBar(
+internal fun SkillBar(
     title: String,
     index: Int,
     progressBarHeight: CSSSizeValue<CSSUnit.px> = 5.px,
     percentage: CSSSizeValue<CSSUnit.percent> = 50.percent,
-    animatedPercentage: Int
+    animatedPercentage: Int,
 ) {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .margin(bottom = 10.px)
             .maxWidth(500.px)
-            .padding(topBottom = 5.px)
+            .padding(topBottom = 5.px),
     ) {
         Row(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .margin(bottom = 5.px),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text(title)
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("$animatedPercentage%")
             }
         }
         Box(modifier = Modifier.fillMaxWidth()) {
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
                     .height(progressBarHeight)
-                    .backgroundColor(Theme.LightGray.rgb)
+                    .backgroundColor(Theme.LightGray.rgb),
             )
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth(percentage)
                     .height(progressBarHeight)
                     .backgroundColor(Theme.Primary.rgb)
@@ -77,9 +82,9 @@ fun SkillBar(
                         Transition.of(
                             property = "width",
                             duration = 1000.ms,
-                            delay = 100.ms * index
-                        )
-                    )
+                            delay = 100.ms * index,
+                        ),
+                    ),
             )
         }
     }

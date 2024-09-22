@@ -8,9 +8,9 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
-import io.github.jdgarita.components.sections.AboutSection
-import io.github.jdgarita.components.sections.ExperienceSection
-import io.github.jdgarita.components.sections.MainSection
+import io.github.jdgarita.components.BackToTopButton
+import io.github.jdgarita.components.OverflowMenu
+import io.github.jdgarita.sections.*
 
 @Page
 @Composable
@@ -21,12 +21,17 @@ fun HomePage() {
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             MainSection(onMenuClicked = { menuOpened = true })
             AboutSection()
             ExperienceSection()
+            QualificationsSection()
+            FooterSection()
         }
-
+        BackToTopButton()
+        if (menuOpened) {
+            OverflowMenu(onMenuClosed = { menuOpened = false })
+        }
     }
 }

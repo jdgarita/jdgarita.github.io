@@ -1,4 +1,4 @@
-package io.github.jdgarita.components.sections
+package io.github.jdgarita.sections
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.*
@@ -18,7 +18,7 @@ import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import io.github.jdgarita.components.widgets.Header
+import io.github.jdgarita.components.Header
 import io.github.jdgarita.models.Section
 import io.github.jdgarita.models.Theme
 import io.github.jdgarita.styles.MainButtonStyle
@@ -35,10 +35,11 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 internal fun MainSection(onMenuClicked: () -> Unit) {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .id(Section.Home.id)
             .maxWidth(SECTION_WIDTH.px),
-        contentAlignment = Alignment.TopCenter
+        contentAlignment = Alignment.TopCenter,
     ) {
         MainBackground()
         MainContent(onMenuClicked = onMenuClicked)
@@ -46,13 +47,14 @@ internal fun MainSection(onMenuClicked: () -> Unit) {
 }
 
 @Composable
-fun MainBackground() {
+private fun MainBackground() {
     Image(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .objectFit(ObjectFit.Cover),
         src = Res.Image.background,
-        alt = "Background Image"
+        alt = "Background Image",
     )
 }
 
@@ -62,20 +64,24 @@ private fun MainContent(onMenuClicked: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Header(onMenuClicked = onMenuClicked)
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             SimpleGrid(
-                modifier = Modifier.fillMaxWidth(
-                    if (breakpoint >= Breakpoint.MD) 80.percent
-                    else 90.percent
+                modifier =
+                Modifier.fillMaxWidth(
+                    if (breakpoint >= Breakpoint.MD) {
+                        80.percent
+                    } else {
+                        90.percent
+                    },
                 ),
-                numColumns = numColumns(base = 1, md = 2)
+                numColumns = numColumns(base = 1, md = 2),
             ) {
                 MainText(breakpoint = breakpoint)
                 MainImage()
@@ -88,44 +94,48 @@ private fun MainContent(onMenuClicked: () -> Unit) {
 private fun MainText(breakpoint: Breakpoint) {
     Row(
         horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Column {
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(if (breakpoint >= Breakpoint.LG) 45.px else 20.px)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Primary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("Hello, I'm")
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(top = 20.px, bottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(if (breakpoint >= Breakpoint.LG) 68.px else 40.px)
                     .fontWeight(FontWeight.Bolder)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("JD")
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(top = 10.px, bottom = 5.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(20.px)
                     .fontWeight(FontWeight.Bold)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("Sr Mobile Developer")
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(bottom = 25.px)
                     .maxWidth(400.px)
                     .fontFamily(FONT_FAMILY)
@@ -133,26 +143,29 @@ private fun MainText(breakpoint: Breakpoint) {
                     .fontStyle(FontStyle.Italic)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("Kotlin Multiplatform Developer")
             }
             Button(
-                attrs = MainButtonStyle.toModifier()
+                attrs =
+                MainButtonStyle
+                    .toModifier()
                     .height(40.px)
                     .border(width = 0.px)
                     .borderRadius(r = 5.px)
                     .backgroundColor(Theme.Primary.rgb)
                     .color(Colors.White)
                     .cursor(Cursor.Pointer)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Link(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .color(Colors.White)
                         .textDecorationLine(TextDecorationLine.None),
                     text = "Inquire",
-                    path = Section.Contact.path
+                    path = Section.Contact.path,
                 )
             }
         }
@@ -163,12 +176,12 @@ private fun MainText(breakpoint: Breakpoint) {
 private fun MainImage() {
     Column(
         modifier = Modifier.fillMaxSize(80.percent).fillMaxHeight(),
-        verticalArrangement = Arrangement.Bottom
+        verticalArrangement = Arrangement.Bottom,
     ) {
         Image(
             modifier = MainImageStyle.toModifier().fillMaxWidth(),
             src = Res.Image.jd,
-            alt = "JD"
+            alt = "JD",
         )
     }
 }

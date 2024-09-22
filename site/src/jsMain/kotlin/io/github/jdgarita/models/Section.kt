@@ -1,51 +1,53 @@
 package io.github.jdgarita.models
 
-enum class Section(
+import io.github.jdgarita.util.Res
+
+internal enum class Section(
     val id: String,
     val title: String,
     val subtitle: String,
-    val path: String
+    val path: String,
 ) {
     Home(
         id = "home",
         title = "Home",
         subtitle = "",
-        path = "#home"
+        path = "#home",
     ),
     About(
         id = "about",
         title = "About me",
         subtitle = "Juan Diego",
-        path = "#about"
+        path = "#about",
     ),
     Experience(
         id = "experience",
         title = "Experience",
         subtitle = "Work Experience",
-        path = "#experience"
+        path = "#experience",
     ),
     Qualifications(
         id = "qualifications",
         title = "Qualifications",
         subtitle = "I'm Good at",
-        path = "#qualifications"
+        path = "#qualifications",
     ),
     Resume(
         id = "resume",
         title = "Resume",
         subtitle = "",
-        path = "#resume"
+        path = Res.Docs.resume,
     ),
     Contact(
         id = "contact",
         title = "Contact me",
         subtitle = "Get in Touch",
-        path = "#contact"
+        path = "#contact",
     ),
     Skills(
         id = "skills",
         title = "Skills",
         subtitle = "",
-        path = "#skills"
-    )
+        path = "#skills",
+    ),
 }

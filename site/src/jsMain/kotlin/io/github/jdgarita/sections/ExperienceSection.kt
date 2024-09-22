@@ -1,4 +1,4 @@
-package io.github.jdgarita.components.sections
+package io.github.jdgarita.sections
 
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -8,8 +8,8 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import io.github.jdgarita.components.widgets.ExperienceCard
-import io.github.jdgarita.components.widgets.SectionTitle
+import io.github.jdgarita.components.ExperienceCard
+import io.github.jdgarita.components.SectionTitle
 import io.github.jdgarita.models.Experience
 import io.github.jdgarita.models.Section
 import io.github.jdgarita.util.Constants.SECTION_WIDTH
@@ -18,20 +18,21 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun ExperienceSection() {
+internal fun ExperienceSection() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .id(Section.Experience.id)
             .maxWidth(SECTION_WIDTH.px)
-            .padding(topBottom = 100.px),
-        contentAlignment = Alignment.Center
+            .padding(top = 100.px),
+        contentAlignment = Alignment.Center,
     ) {
         ExperienceContent()
     }
 }
 
 @Composable
-fun ExperienceContent() {
+private fun ExperienceContent() {
     val breakpoint = rememberBreakpoint()
     var animatedMargin by remember { mutableStateOf(200.px) }
 
@@ -40,32 +41,39 @@ fun ExperienceContent() {
         distanceFromTop = 500.0,
         onViewportEntered = {
             animatedMargin = 50.px
-        }
+        },
     )
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth(
-                if (breakpoint >= Breakpoint.MD) 100.percent
-                else 90.percent
+                if (breakpoint >= Breakpoint.MD) {
+                    100.percent
+                } else {
+                    90.percent
+                },
             ),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         SectionTitle(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth(
-                    if (breakpoint >= Breakpoint.MD) 60.percent
-                    else 90.percent
-                )
-                .margin(bottom = 25.px),
-            section = Section.Experience
+                    if (breakpoint >= Breakpoint.MD) {
+                        60.percent
+                    } else {
+                        90.percent
+                    },
+                ).margin(bottom = 25.px),
+            section = Section.Experience,
         )
         Experience.entries.forEach { experience ->
             ExperienceCard(
                 breakpoint = breakpoint,
                 active = experience == Experience.First,
                 experience = experience,
-                animatedMargin = animatedMargin
+                animatedMargin = animatedMargin,
             )
         }
     }

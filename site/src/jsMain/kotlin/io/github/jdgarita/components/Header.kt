@@ -1,4 +1,4 @@
-package io.github.jdgarita.components.widgets
+package io.github.jdgarita.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -22,18 +22,19 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun Header(onMenuClicked: () -> Unit) {
+internal fun Header(onMenuClicked: () -> Unit) {
     val breakpoint = rememberBreakpoint()
     Row(
-        modifier = Modifier
-            .fillMaxWidth(if (breakpoint > Breakpoint.MD) 80.percent else 90.percent)
-            .margin(topBottom = 50.px),
+        modifier =
+            Modifier
+                .fillMaxWidth(if (breakpoint > Breakpoint.MD) 80.percent else 90.percent)
+                .margin(topBottom = 50.px),
         horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         LeftSide(
             breakpoint = breakpoint,
-            onMenuClicked = onMenuClicked
+            onMenuClicked = onMenuClicked,
         )
         if (breakpoint > Breakpoint.MD) {
             RightSide()
@@ -42,19 +43,20 @@ fun Header(onMenuClicked: () -> Unit) {
 }
 
 @Composable
-fun LeftSide(
+private fun LeftSide(
     breakpoint: Breakpoint,
-    onMenuClicked: () -> Unit
+    onMenuClicked: () -> Unit,
 ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         if (breakpoint <= Breakpoint.MD) {
             FaBars(
-                modifier = Modifier
-                    .margin(right = 15.px)
-                    .onClick {
-                        onMenuClicked()
-                    },
-                size = IconSize.XL
+                modifier =
+                    Modifier
+                        .margin(right = 15.px)
+                        .onClick {
+                            onMenuClicked()
+                        },
+                size = IconSize.XL,
             )
         }
         SocialBar()
@@ -62,25 +64,28 @@ fun LeftSide(
 }
 
 @Composable
-fun RightSide() {
+private fun RightSide() {
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .borderRadius(r = 50.px)
-            .backgroundColor(Theme.LighterGray.rgb)
-            .padding(all = 20.px),
-        horizontalArrangement = Arrangement.End
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .borderRadius(r = 50.px)
+                .backgroundColor(Theme.LighterGray.rgb)
+                .padding(all = 20.px),
+        horizontalArrangement = Arrangement.End,
     ) {
         Section.entries.toTypedArray().take(6).forEach { section ->
             Link(
-                modifier = NavigationItemStyle.toModifier()
-                    .padding(right = 30.px)
-                    .fontFamily(FONT_FAMILY)
-                    .fontSize(18.px)
-                    .fontWeight(FontWeight.Normal)
-                    .textDecorationLine(TextDecorationLine.None),
+                modifier =
+                    NavigationItemStyle
+                        .toModifier()
+                        .padding(right = 30.px)
+                        .fontFamily(FONT_FAMILY)
+                        .fontSize(18.px)
+                        .fontWeight(FontWeight.Normal)
+                        .textDecorationLine(TextDecorationLine.None),
                 path = section.path,
-                text = section.title
+                text = section.title,
             )
         }
     }

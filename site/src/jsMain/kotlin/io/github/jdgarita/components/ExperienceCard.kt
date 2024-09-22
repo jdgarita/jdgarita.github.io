@@ -1,4 +1,4 @@
-package io.github.jdgarita.components.widgets
+package io.github.jdgarita.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -23,55 +23,61 @@ import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun ExperienceCard(
+internal fun ExperienceCard(
     breakpoint: Breakpoint,
     active: Boolean = false,
     experience: Experience,
-    animatedMargin: CSSSizeValue<CSSUnit.px>
+    animatedMargin: CSSSizeValue<CSSUnit.px>,
 ) {
     SimpleGrid(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .maxWidth(
-                if (breakpoint >= Breakpoint.MD) 60.percent
-                else 90.percent
+                if (breakpoint >= Breakpoint.MD) {
+                    60.percent
+                } else {
+                    90.percent
+                },
             ),
-        numColumns = numColumns(base = 1, md = 2)
+        numColumns = numColumns(base = 1, md = 2),
     ) {
         ExperienceDescription(
             active = active,
-            description = experience.description
+            description = experience.description,
         )
         ExperienceDetails(
             breakpoint = breakpoint,
             active = active,
             experience = experience,
-            animatedMargin = animatedMargin
+            animatedMargin = animatedMargin,
         )
     }
 }
 
 @Composable
-fun ExperienceDescription(
+private fun ExperienceDescription(
     active: Boolean,
-    description: String
+    description: String,
 ) {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .margin(topBottom = 14.px)
             .padding(all = 14.px)
-            .backgroundColor(if (active) Theme.Primary.rgb else Theme.LighterGray.rgb)
+            .backgroundColor(if (active) Theme.Primary.rgb else Theme.LighterGray.rgb),
     ) {
         P(
-            attrs = Modifier
+            attrs =
+            Modifier
                 .margin(topBottom = 0.px)
                 .fontFamily(FONT_FAMILY)
                 .fontSize(14.px)
                 .lineHeight(1.6)
                 .fontWeight(FontWeight.Normal)
                 .color(if (active) Colors.White else Theme.Secondary.rgb)
-                .toAttrs()
+                .toAttrs(),
         ) {
             Text(description)
         }
@@ -79,64 +85,69 @@ fun ExperienceDescription(
 }
 
 @Composable
-fun ExperienceDetails(
+private fun ExperienceDetails(
     breakpoint: Breakpoint,
     active: Boolean,
     experience: Experience,
-    animatedMargin: CSSSizeValue<CSSUnit.px>
+    animatedMargin: CSSSizeValue<CSSUnit.px>,
 ) {
     Row(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .margin(left = if (breakpoint >= Breakpoint.MD) 14.px else 0.px),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         if (breakpoint >= Breakpoint.MD) {
             ExperienceNumber(active = active, experience = experience)
         }
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .margin(left = if (breakpoint <= Breakpoint.SM) 0.px else animatedMargin)
                 .transition(
                     Transition.of(
                         property = "margin",
                         duration = 500.ms,
-                        delay = experience.ordinal * 100.ms
-                    )
+                        delay = experience.ordinal * 100.ms,
+                    ),
                 ),
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
         ) {
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(20.px)
                     .fontWeight(FontWeight.Bold)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text(experience.jobPosition)
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(14.px)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Secondary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text("${experience.from} - ${experience.to}")
             }
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(14.px)
                     .fontWeight(FontWeight.Normal)
                     .color(Theme.Primary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text(experience.company)
             }
@@ -145,42 +156,45 @@ fun ExperienceDetails(
 }
 
 @Composable
-fun ExperienceNumber(
+private fun ExperienceNumber(
     active: Boolean,
-    experience: Experience
+    experience: Experience,
 ) {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .margin(right = 14.px)
             .fillMaxHeight(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxHeight()
                 .width(3.px)
-                .backgroundColor(Theme.Primary.rgb)
+                .backgroundColor(Theme.Primary.rgb),
         )
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(40.px)
                 .border(
                     width = 3.px,
                     style = LineStyle.Solid,
-                    color = Theme.Primary.rgb
-                )
-                .backgroundColor(if (active) Theme.Primary.rgb else Colors.White)
+                    color = Theme.Primary.rgb,
+                ).backgroundColor(if (active) Theme.Primary.rgb else Colors.White)
                 .borderRadius(50.percent),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             P(
-                attrs = Modifier
+                attrs =
+                Modifier
                     .margin(topBottom = 0.px)
                     .fontFamily(FONT_FAMILY)
                     .fontSize(16.px)
                     .fontWeight(FontWeight.Bold)
                     .color(if (active) Colors.White else Theme.Primary.rgb)
-                    .toAttrs()
+                    .toAttrs(),
             ) {
                 Text(experience.number)
             }

@@ -1,4 +1,4 @@
-package io.github.jdgarita.components.widgets
+package io.github.jdgarita.components
 
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -22,10 +22,10 @@ import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun SectionTitle(
+internal fun SectionTitle(
     modifier: Modifier = Modifier,
     section: Section,
-    alignment: Alignment.Horizontal = Alignment.Start
+    alignment: Alignment.Horizontal = Alignment.Start,
 ) {
     val scope = rememberCoroutineScope()
     var titleMargin by remember { mutableStateOf(50.px) }
@@ -42,68 +42,67 @@ fun SectionTitle(
                 }
                 titleMargin = 0.px
             }
-        }
+        },
     )
 
     Column(
         modifier = modifier,
-        horizontalAlignment = alignment
+        horizontalAlignment = alignment,
     ) {
         P(
-            attrs = Modifier
+            attrs =
+            Modifier
                 .fillMaxWidth()
                 .textAlign(
                     when (alignment) {
                         Alignment.CenterHorizontally -> TextAlign.Center
                         Alignment.End -> TextAlign.End
                         else -> TextAlign.Start
-                    }
-                )
-                .margin(
+                    },
+                ).margin(
                     left = titleMargin,
                     top = 0.px,
-                    bottom = 0.px
-                )
-                .fontFamily(FONT_FAMILY)
+                    bottom = 0.px,
+                ).fontFamily(FONT_FAMILY)
                 .fontSize(25.px)
                 .fontWeight(FontWeight.Normal)
                 .color(Theme.Primary.rgb)
                 .transition(Transition.of(property = "margin", duration = 300.ms))
-                .toAttrs()
+                .toAttrs(),
         ) {
             Text(section.title)
         }
         P(
-            attrs = Modifier
+            attrs =
+            Modifier
                 .fillMaxWidth()
                 .textAlign(
                     when (alignment) {
                         Alignment.CenterHorizontally -> TextAlign.Center
                         Alignment.End -> TextAlign.End
                         else -> TextAlign.Start
-                    }
-                )
-                .margin(
-                    left = if(alignment == Alignment.Start) subtitleMargin else 0.px,
-                    right = if(alignment == Alignment.CenterHorizontally) subtitleMargin else 0.px,
+                    },
+                ).margin(
+                    left = if (alignment == Alignment.Start) subtitleMargin else 0.px,
+                    right = if (alignment == Alignment.CenterHorizontally) subtitleMargin else 0.px,
                     bottom = 10.px,
-                    top = 0.px
-                )
-                .fontFamily(FONT_FAMILY)
+                    top = 0.px,
+                ).fontFamily(FONT_FAMILY)
                 .fontSize(40.px)
                 .fontWeight(FontWeight.Bold)
                 .color(Theme.Secondary.rgb)
                 .transition(Transition.of(property = "margin", duration = 300.ms))
-                .toAttrs()
+                .toAttrs(),
         ) {
             Text(section.subtitle)
         }
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .height(2.px)
                 .width(80.px)
                 .backgroundColor(Theme.Primary.rgb)
-                .borderRadius(r = 50.px)
+                .borderRadius(r = 50.px),
         )
     }
 }
