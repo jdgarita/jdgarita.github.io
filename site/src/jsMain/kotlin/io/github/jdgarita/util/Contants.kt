@@ -4,7 +4,7 @@ object Constants {
     const val LINKEDIN = "https://www.linkedin.com/in/jdgarita/"
     const val GITHUB = "https://github.com/jdgarita"
     const val SECTION_WIDTH = 1920
-    const val FONT_FAMILY = "Roboto"
+    const val FONT_FAMILY = ""
 }
 
 object Res {

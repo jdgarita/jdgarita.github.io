@@ -8,6 +8,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.silk.components.icons.fa.FaBars
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
@@ -86,6 +87,7 @@ private fun RightSide() {
                         .textDecorationLine(TextDecorationLine.None),
                 path = section.path,
                 text = section.title,
+                openInternalLinksStrategy = OpenLinkStrategy.IN_PLACE
             )
         }
     }
