@@ -75,7 +75,7 @@ private fun MainContent(onMenuClicked: () -> Unit) {
             SimpleGrid(
                 modifier =
                 Modifier.fillMaxWidth(
-                    if (breakpoint >= Breakpoint.MD) {
+                    if (breakpoint >= Breakpoint.SM) {
                         80.percent
                     } else {
                         90.percent

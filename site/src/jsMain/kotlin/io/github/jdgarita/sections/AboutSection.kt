@@ -55,7 +55,7 @@ private fun AboutContent() {
         modifier =
         Modifier
             .fillMaxWidth(
-                if (breakpoint >= Breakpoint.MD) {
+                if (breakpoint >= Breakpoint.SM) {
                     100.percent
                 } else {
                     90.percent
@@ -66,7 +66,7 @@ private fun AboutContent() {
         SimpleGrid(
             modifier =
             Modifier.fillMaxWidth(
-                if (breakpoint >= Breakpoint.MD) {
+                if (breakpoint >= Breakpoint.SM) {
                     90.percent
                 } else {
                     100.percent
@@ -74,7 +74,7 @@ private fun AboutContent() {
             ),
             numColumns = numColumns(base = 1, md = 2),
         ) {
-            if (breakpoint >= Breakpoint.MD) {
+            if (breakpoint >= Breakpoint.SM) {
                 AboutImage()
             }
             AboutMe()
