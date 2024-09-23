@@ -34,7 +34,7 @@ internal fun OverflowMenu(onMenuClosed: () -> Unit) {
     LaunchedEffect(breakpoint) {
         translateX = 0.percent
         opacity = 100.percent
-        if (breakpoint > Breakpoint.SM) {
+        if (breakpoint > Breakpoint.MD) {
             scope.launch {
                 translateX = (-100).percent
                 opacity = 0.percent
@@ -58,7 +58,7 @@ internal fun OverflowMenu(onMenuClosed: () -> Unit) {
             modifier = Modifier
                 .fillMaxHeight()
                 .padding(all = 25.px)
-                .width(if (breakpoint < Breakpoint.SM) 50.percent else 25.percent)
+                .width(if (breakpoint < Breakpoint.MD) 50.percent else 25.percent)
                 .overflow(Overflow.Auto)
                 .scrollBehavior(ScrollBehavior.Smooth)
                 .backgroundColor(Colors.White)

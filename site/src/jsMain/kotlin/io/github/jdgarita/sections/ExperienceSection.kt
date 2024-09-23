@@ -48,7 +48,7 @@ private fun ExperienceContent() {
         modifier =
         Modifier
             .fillMaxWidth(
-                if (breakpoint >= Breakpoint.SM) {
+                if (breakpoint >= Breakpoint.MD) {
                     100.percent
                 } else {
                     90.percent
@@ -60,7 +60,7 @@ private fun ExperienceContent() {
             modifier =
             Modifier
                 .fillMaxWidth(
-                    if (breakpoint >= Breakpoint.SM) {
+                    if (breakpoint >= Breakpoint.MD) {
                         60.percent
                     } else {
                         90.percent

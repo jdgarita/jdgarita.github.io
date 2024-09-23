@@ -34,7 +34,7 @@ internal fun ExperienceCard(
         Modifier
             .fillMaxWidth()
             .maxWidth(
-                if (breakpoint >= Breakpoint.SM) {
+                if (breakpoint >= Breakpoint.MD) {
                     60.percent
                 } else {
                     90.percent
@@ -95,10 +95,10 @@ private fun ExperienceDetails(
         modifier =
         Modifier
             .fillMaxWidth()
-            .margin(left = if (breakpoint >= Breakpoint.SM) 14.px else 0.px),
+            .margin(left = if (breakpoint >= Breakpoint.MD) 14.px else 0.px),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (breakpoint >= Breakpoint.SM) {
+        if (breakpoint >= Breakpoint.MD) {
             ExperienceNumber(active = active, experience = experience)
         }
         Column(

@@ -28,7 +28,7 @@ internal fun Header(onMenuClicked: () -> Unit) {
     Row(
         modifier =
             Modifier
-                .fillMaxWidth(if (breakpoint > Breakpoint.SM) 80.percent else 90.percent)
+                .fillMaxWidth(if (breakpoint > Breakpoint.MD) 80.percent else 90.percent)
                 .margin(topBottom = 50.px),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -37,7 +37,7 @@ internal fun Header(onMenuClicked: () -> Unit) {
             breakpoint = breakpoint,
             onMenuClicked = onMenuClicked,
         )
-        if (breakpoint > Breakpoint.SM) {
+        if (breakpoint > Breakpoint.MD) {
             RightSide()
         }
     }
@@ -49,7 +49,7 @@ private fun LeftSide(
     onMenuClicked: () -> Unit,
 ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        if (breakpoint <= Breakpoint.SM) {
+        if (breakpoint <= Breakpoint.MD) {
             FaBars(
                 modifier =
                     Modifier

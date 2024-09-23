@@ -37,7 +37,7 @@ private fun QualificationContent() {
     Column(
         modifier = Modifier
             .fillMaxWidth(
-                if (breakpoint >= Breakpoint.SM) 100.percent
+                if (breakpoint >= Breakpoint.MD) 100.percent
                 else 90.percent
             ),
         horizontalAlignment = Alignment.CenterHorizontally
