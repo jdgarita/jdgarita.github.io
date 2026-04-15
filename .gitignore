@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# IDE / editor
+.idea/
+.vscode/
+
+# Claude Code session state
+.claude/
+
+# Abandoned Kotlin/JS (Kobweb) experiment — not part of the static site
+site/
+build/
+.gradle/
+kotlin-js-store/

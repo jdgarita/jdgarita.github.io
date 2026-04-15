@@ -1,0 +1,83 @@
+{
+  "_comment": "Cadenas en español. Las claves son rutas planas referenciadas por [data-i18n] en index.html. Debe reflejar todas las claves de en.json.",
+
+  "meta.title": "Juan Diego Garita — Ingeniero Senior Android / KMP",
+  "meta.description": "Ingeniero móvil senior con más de 10 años de experiencia construyendo apps Android y Kotlin Multiplatform.",
+
+  "a11y.themeToggle": "Cambiar tema claro / oscuro",
+  "a11y.langToggle": "Cambiar idioma",
+  "a11y.menuToggle": "Abrir menú de navegación",
+
+  "nav.about": "Sobre mí",
+  "nav.experience": "Experiencia",
+  "nav.projects": "Proyectos",
+  "nav.skills": "Habilidades",
+  "nav.contact": "Contacto",
+  "nav.resume": "Currículum",
+
+  "hero.eyebrow": "Ingeniero Móvil Senior",
+  "hero.title": "Juan Diego Garita",
+  "hero.tagline": "Construyo apps móviles pulidas y confiables con Kotlin Multiplatform y Android.",
+  "hero.description": "Más de 10 años lanzando apps móviles en producción para startups y grandes empresas en publicidad, salud y autenticación.",
+  "hero.ctaPrimary": "Descargar currículum",
+  "hero.ctaSecondary": "Contáctame",
+
+  "about.heading": "Sobre mí",
+  "about.body": "Soy un Google Certified Associate Android Developer en Kotlin con más de 10 años de experiencia escribiendo código limpio y bien probado para startups y grandes empresas. Me enfoco en Kotlin Multiplatform, Jetpack Compose y Android moderno, y me apasionan el buen oficio, la colaboración y la mejora continua.",
+  "about.highlight1": "Google Certified Associate Android Developer (Kotlin)",
+  "about.highlight2": "Especialista en Kotlin Multiplatform y Jetpack Compose",
+  "about.highlight3": "Prácticas ágiles — Scrum, Kanban, TDD, pair programming",
+
+  "experience.heading": "Experiencia",
+  "experience.subheading": "Una breve selección de roles recientes. Para el historial completo consulta mi currículum.",
+
+  "experience.role1.company": "Swiftly",
+  "experience.role1.role": "Ingeniero Senior de Kotlin Multiplatform",
+  "experience.role1.dates": "2022 — Presente",
+  "experience.role1.bullet1": "Diseñé un componente de anuncios reutilizable dentro de un \"App Factory\" de Kotlin Multiplatform, permitiendo lanzar de forma rápida funciones de monetización consistentes en múltiples apps white-label.",
+  "experience.role1.bullet2": "Integré el SDK móvil de Xandr en la arquitectura KMP compartida para una entrega de anuncios e inventario sin fricciones.",
+
+  "experience.role2.company": "Mode",
+  "experience.role2.role": "Desarrollador Android Senior",
+  "experience.role2.dates": "2021 — 2022",
+  "experience.role2.bullet1": "Redacté documentación de buenas prácticas, estándares y guías de arquitectura para el equipo móvil.",
+  "experience.role2.bullet2": "Colaboré con el equipo de Producto para lanzar nuevas funciones validadas con A/B testing.",
+  "experience.role2.bullet3": "Coordiné releases entre múltiples equipos y dí seguimiento a bugs para mantener una UX sólida en cada versión.",
+
+  "experience.role3.company": "BodyBuilding.com",
+  "experience.role3.role": "Desarrollador Android Senior",
+  "experience.role3.dates": "2021",
+  "experience.role3.bullet1": "Migré la lógica existente en MVP (Java) a MVVM en Kotlin.",
+  "experience.role3.bullet2": "Diagnostiqué y resolví cuellos de botella de rendimiento críticos, mejorando la estabilidad general de la app.",
+  "experience.role3.bullet3": "Colaboré con equipos multifuncionales para mantener la app Android saludable en un plazo ajustado.",
+
+  "experience.role4.company": "Trusona",
+  "experience.role4.role": "Desarrollador Android",
+  "experience.role4.dates": "2017 — 2021",
+  "experience.role4.bullet1": "Escribí código de producción en Java y Kotlin aplicando TDD, pair programming y principios de clean code.",
+  "experience.role4.bullet2": "Colaboré con el equipo de experiencia en nuevas funciones entregadas mediante un flujo Kanban.",
+  "experience.role4.bullet3": "Automaticé el pipeline de publicación con Fastlane junto al equipo de producto.",
+
+  "projects.heading": "Proyectos",
+  "projects.subheading": "Productos que he construido y publicado en mi tiempo libre.",
+  "projects.freshtrack.tagline": "Control de caducidad de alimentos",
+  "projects.freshtrack.description": "Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.",
+  "projects.store.getItOn": "Disponible en",
+  "projects.store.availableOn": "Disponible en",
+  "projects.store.comingSoon": "App Store — Próximamente",
+
+  "skills.heading": "Stack técnico",
+  "skills.subheading": "Las herramientas que uso en el día a día.",
+  "skills.group.core": "Base",
+  "skills.group.android": "Android",
+  "skills.group.tooling": "Herramientas",
+  "skills.group.architecture": "Arquitectura",
+
+  "contact.heading": "Hablemos",
+  "contact.body": "Abierto a roles senior de Android y Kotlin Multiplatform, trabajo por contrato y colaboraciones interesantes.",
+  "contact.emailLabel": "Correo",
+  "contact.linkedinLabel": "LinkedIn",
+  "contact.githubLabel": "GitHub",
+
+  "footer.rights": "Todos los derechos reservados."
+}
