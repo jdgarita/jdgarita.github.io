@@ -1,17 +1,18 @@
-# General ignores
+# macOS
 .DS_Store
-build
-out
-kotlin-js-store
 
-# IntelliJ ignores
-*.iml
-/*.ipr
+# Node
+node_modules/
 
-/.idea
+# IDE / editor
+.idea/
+.vscode/
 
-# Gradle ignores
-.gradle
+# Claude Code session state
+.claude/
 
-# Kotlin ignores
-.kotlin
+# Abandoned Kotlin/JS (Kobweb) experiment — not part of the static site
+site/
+build/
+.gradle/
+kotlin-js-store/

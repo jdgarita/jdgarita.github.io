@@ -1,18 +1,69 @@
-# 💫 About Me:
-Google Certified Associate Android Developer in Kotlin with 8+ years of experience writing top-quality clean code for big companies and startups as well using agile methodologies such as Scrum and Kanban. Dedicated to continuously developing and designing new features, collaborating with cross-functional teams, testing code, fixing bugs, and improving any existing codebase.
+# jdgarita.github.io
 
+Personal landing page for **Juan Diego Garita** — Senior Android / Kotlin Multiplatform engineer.  
+Live at <https://jdgarita.github.io>.
 
-# 💻 Tech Stack:
-![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=jdgarita&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=jdgarita&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=jdgarita&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+## What it is
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=jdgarita&theme=radical&no-frame=false&no-bg=true&margin-w=4)
+A single-page static site, hand-written in vanilla HTML, CSS, and JavaScript. No build step, no package manager, no framework, no tests, no CI. You edit the source files and push — GitHub Pages serves the repo root directly.
 
----
-[![](https://visitcount.itsvg.in/api?id=jdgarita&icon=0&color=0)](https://visitcount.itsvg.in)
+Features:
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+- **Light / dark theme** toggle, persisted in `localStorage`, with a no-FOUC inline script.
+- **English / Spanish** toggle, all user-visible copy routed through `i18n/en.json` and `i18n/es.json`.
+- **Mobile-first layout** built on CSS custom properties — tweak a token, the whole site updates.
+- **Projects** section with real store links (Google Play live, App Store coming soon).
+
+## Repo layout
+
+```
+index.html            single-page site, semantic landmarks, data-i18n attributes
+css/custom.css        token-driven stylesheet
+css/font-awesome.min.css + fonts/fontawesome-*   FontAwesome 4.7.0 icons
+js/custom.js          theme toggle, language toggle, i18n loader, mobile nav
+i18n/en.json          English copy
+i18n/es.json          Spanish copy
+image/jd.png          profile photo
+image/android.ico     favicon
+resume/jd.pdf         downloadable resume
+CLAUDE.md             notes for Claude Code sessions in this repo
+```
+
+Everything else in the working tree (`site/`, `build/`, `.gradle/`, `kotlin-js-store/`, `node_modules/`) is untracked leftover from an abandoned Kotlin/JS rewrite — ignore it.
+
+## Preview locally
+
+```bash
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
+
+Opening `index.html` with `file://` also works — `js/custom.js` carries an embedded fallback dictionary for when `fetch('i18n/*.json')` is blocked by the browser's file-URL policy.
+
+## Editing content
+
+All strings live in `i18n/en.json` and `i18n/es.json`, keyed by flat dot-paths (e.g. `hero.title`, `experience.role1.bullet1`). Change both files together — keys must stay in sync.
+
+Elements reference keys via:
+
+```html
+<span data-i18n="some.key"></span>
+<button data-i18n-attr="aria-label:a11y.menuToggle"></button>
+```
+
+When you add a new key, also mirror it in the `FALLBACK.en` / `FALLBACK.es` objects inside `js/custom.js` so `file://` previews keep working.
+
+## Deployment
+
+`master` is the published branch. `git push` to `master` is the deploy — there's no build or release script. The current redesign lives on `legacy`; merge to `master` to ship.
+
+## Stack
+
+- HTML + CSS + vanilla JS (no framework)
+- FontAwesome 4.7.0 (vendored) for icons
+- Google Fonts: Inter (UI) + JetBrains Mono (mono accents)
+- Inline SVG for the Google Play logo (FA4 doesn't ship one)
+
+## License
+
+Personal site — content © Juan Diego Garita. Code is free to reuse as inspiration.
