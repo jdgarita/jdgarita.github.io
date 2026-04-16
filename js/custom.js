@@ -166,6 +166,12 @@
         }
     };
 
+    /* ---------- Firebase Analytics ---------- */
+    var analytics = null;
+    function logEvent(name, params) {
+        if (analytics) { try { analytics.logEvent(name, params); } catch (e) {} }
+    }
+
     /* ---------- Helpers ---------- */
     function $(sel, root) { return (root || document).querySelector(sel); }
     function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
@@ -218,6 +224,22 @@
 
     /* ---------- Boot ---------- */
     document.addEventListener('DOMContentLoaded', function () {
+        // Firebase init (deferred SDK scripts have executed by now)
+        if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+            try {
+                firebase.initializeApp({
+                    apiKey: 'AIzaSyB4OruGxSx4X-AV9OOcwRULNcharw6kNuw',
+                    authDomain: 'jdgarita-site.firebaseapp.com',
+                    projectId: 'jdgarita-site',
+                    storageBucket: 'jdgarita-site.firebasestorage.app',
+                    messagingSenderId: '319136318898',
+                    appId: '1:319136318898:web:88b2842ffefa0e20c250ab',
+                    measurementId: 'G-NYVB5C810D'
+                });
+                analytics = firebase.analytics();
+            } catch (e) {}
+        }
+
         // Initial language (the inline head script already set <html lang>)
         var lang = document.documentElement.getAttribute('lang') || 'en';
         if (lang !== 'en' && lang !== 'es') lang = 'en';
@@ -228,7 +250,9 @@
         if (themeBtn) {
             themeBtn.addEventListener('click', function () {
                 var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-                setTheme(current === 'dark' ? 'light' : 'dark');
+                var next = current === 'dark' ? 'light' : 'dark';
+                setTheme(next);
+                logEvent('theme_toggle', { theme: next });
             });
         }
 
@@ -237,7 +261,9 @@
         if (langBtn) {
             langBtn.addEventListener('click', function () {
                 var current = document.documentElement.getAttribute('lang') === 'es' ? 'es' : 'en';
-                setLang(current === 'es' ? 'en' : 'es');
+                var next = current === 'es' ? 'en' : 'es';
+                setLang(next);
+                logEvent('lang_toggle', { language: next });
             });
         }
 
@@ -248,6 +274,7 @@
             navToggle.addEventListener('click', function () {
                 var open = navMenu.classList.toggle('is-open');
                 navToggle.setAttribute('aria-expanded', String(open));
+                logEvent('mobile_nav_toggle', { action: open ? 'open' : 'close' });
             });
             // Close menu when tapping a link on mobile
             navMenu.addEventListener('click', function (e) {
@@ -271,5 +298,53 @@
         // Footer year
         var yearEl = $('#footer-year');
         if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        // ---------- Analytics: link tracking ----------
+
+        // Resume downloads
+        $$('a[href="resume/jd.pdf"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                logEvent('file_download', {
+                    file_name: 'jd.pdf',
+                    file_extension: 'pdf',
+                    link_location: link.closest('nav') ? 'nav' : 'hero'
+                });
+            });
+        });
+
+        // Section navigation
+        $$('.nav-menu a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                logEvent('select_content', {
+                    content_type: 'nav_section',
+                    content_id: link.getAttribute('href').substring(1)
+                });
+            });
+        });
+
+        // Contact links
+        $$('.contact-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var href = link.getAttribute('href') || '';
+                var type = href.indexOf('mailto:') === 0 ? 'email'
+                         : href.indexOf('linkedin') > -1 ? 'linkedin'
+                         : href.indexOf('github') > -1   ? 'github'
+                         : 'other';
+                logEvent('select_content', {
+                    content_type: 'contact_link',
+                    content_id: type
+                });
+            });
+        });
+
+        // Google Play store link
+        $$('.store-btn--play').forEach(function (link) {
+            link.addEventListener('click', function () {
+                logEvent('select_content', {
+                    content_type: 'store_link',
+                    content_id: 'google_play_freshtrack'
+                });
+            });
+        });
     });
 })();

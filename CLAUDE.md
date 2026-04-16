@@ -65,6 +65,15 @@ Experience content comes from `resume/jd.pdf` — Swiftly, Mode, BodyBuilding.co
 - Every icon-only button must have an `aria-label` (use `data-i18n-attr` so it's translated).
 - Use the existing `:focus-visible` ring — don't disable outlines.
 
+## Analytics
+
+Firebase Analytics (GA4 backend) is loaded via the **compat CDN** (v11.6.0) — two `<script defer>` tags in `index.html` before `custom.js`. Firebase project: **jdgarita-site** (Firebase Console: `console.firebase.google.com/project/jdgarita-site`).
+
+- Initialization and the `logEvent` helper live in `js/custom.js` inside the IIFE, guarded by `typeof firebase !== 'undefined'` so the site degrades gracefully if the SDK is blocked (ad blockers, `file://`).
+- Pageviews are tracked automatically on init.
+- Custom events: `file_download` (resume), `select_content` (nav sections, contact links, store link), `theme_toggle`, `lang_toggle`, `mobile_nav_toggle`.
+- The Firebase web API key is safe to commit — it's restricted by domain, not a secret.
+
 ## Icons
 
 FontAwesome 4.7.0 covers almost everything (`fa-github`, `fa-linkedin`, `fa-apple`, `fa-envelope`, `fa-bars`, `fa-moon-o` / `fa-sun-o`, etc.). **`fa-google-play` does not exist in the FA4 line** — not even 4.7.0. The Google Play button uses an inline SVG path (from Simple Icons) that inherits `currentColor`. If you need another brand icon that FA4 lacks, follow the same inline-SVG pattern rather than upgrading the icon library.
