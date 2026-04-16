@@ -8,7 +8,7 @@
   "a11y.langToggle": "Cambiar idioma",
   "a11y.menuToggle": "Abrir menú de navegación",
 
-  "nav.about": "Sobre mí",
+  "nav.about": "Sobre Mí",
   "nav.experience": "Experiencia",
   "nav.projects": "Proyectos",
   "nav.skills": "Habilidades",
@@ -17,19 +17,19 @@
 
   "hero.eyebrow": "Ingeniero Móvil Senior",
   "hero.title": "Juan Diego Garita",
-  "hero.tagline": "Construyo apps móviles pulidas y confiables con Kotlin Multiplatform y Android.",
+  "hero.tagline": "Construyo apps móviles pulidas y confiables con Kotlin Multiplatform.",
   "hero.description": "Más de 10 años lanzando apps móviles en producción para startups y grandes empresas en publicidad, salud y autenticación.",
   "hero.ctaPrimary": "Descargar currículum",
   "hero.ctaSecondary": "Contáctame",
 
-  "about.heading": "Sobre mí",
+  "about.heading": "Sobre Mí",
   "about.body": "Soy un Google Certified Associate Android Developer en Kotlin con más de 10 años de experiencia escribiendo código limpio y bien probado para startups y grandes empresas. Me enfoco en Kotlin Multiplatform, Jetpack Compose y Android moderno, y me apasionan el buen oficio, la colaboración y la mejora continua.",
   "about.highlight1": "Google Certified Associate Android Developer (Kotlin)",
   "about.highlight2": "Especialista en Kotlin Multiplatform y Jetpack Compose",
   "about.highlight3": "Prácticas ágiles — Scrum, Kanban, TDD, pair programming",
 
-  "experience.heading": "Experiencia",
-  "experience.subheading": "Una breve selección de roles recientes. Para el historial completo consulta mi currículum.",
+  "experience.heading": "Resumen de Experiencia",
+  "experience.subheading": "",
 
   "experience.role1.company": "Swiftly",
   "experience.role1.role": "Ingeniero Senior de Kotlin Multiplatform",
@@ -58,8 +58,8 @@
   "experience.role4.bullet2": "Colaboré con el equipo de experiencia en nuevas funciones entregadas mediante un flujo Kanban.",
   "experience.role4.bullet3": "Automaticé el pipeline de publicación con Fastlane junto al equipo de producto.",
 
-  "projects.heading": "Proyectos",
-  "projects.subheading": "Productos que he construido y publicado en mi tiempo libre.",
+  "projects.heading": "Proyectos Personales",
+  "projects.subheading": "",
   "projects.freshtrack.tagline": "Control de caducidad de alimentos",
   "projects.freshtrack.description": "Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.",
   "projects.store.getItOn": "Disponible en",
@@ -67,7 +67,7 @@
   "projects.store.comingSoon": "App Store — Próximamente",
 
   "skills.heading": "Stack técnico",
-  "skills.subheading": "Las herramientas que uso en el día a día.",
+  "skills.subheading": "",
   "skills.group.core": "Base",
   "skills.group.android": "Android",
   "skills.group.tooling": "Herramientas",
