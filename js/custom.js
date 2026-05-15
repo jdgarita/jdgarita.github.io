@@ -86,6 +86,8 @@
             'projects.store.availableOn': 'Available on',
             'projects.store.comingSoon': 'App Store — Coming soon',
             'projects.store.viewSourceOn': 'View source on',
+            'projects.store.visit': 'Visit',
+            'projects.store.landingPage': 'Landing page',
             'skills.heading': 'Tech stack',
             'skills.subheading': '',
             'skills.group.core': 'Core',
@@ -157,6 +159,8 @@
             'projects.store.availableOn': 'Disponible en',
             'projects.store.comingSoon': 'App Store — Próximamente',
             'projects.store.viewSourceOn': 'Ver código en',
+            'projects.store.visit': 'Visita',
+            'projects.store.landingPage': 'Landing page',
             'skills.heading': 'Stack técnico',
             'skills.subheading': '',
             'skills.group.core': 'Base',
@@ -359,6 +363,16 @@
                 logEvent('select_content', {
                     content_type: 'source_link',
                     content_id: 'github_frnk'
+                });
+            });
+        });
+
+        // FRNK landing page link
+        $$('.store-btn--site').forEach(function (link) {
+            link.addEventListener('click', function () {
+                logEvent('select_content', {
+                    content_type: 'site_link',
+                    content_id: 'landing_frnk'
                 });
             });
         });
