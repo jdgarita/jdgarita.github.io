@@ -60,11 +60,14 @@
 
   "projects.heading": "Proyectos Personales",
   "projects.subheading": "",
-  "projects.freshtrack.tagline": "Control de caducidad de alimentos",
-  "projects.freshtrack.description": "Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.",
+  "projects.frnk.tagline": "Toolkit KMP de código abierto",
+  "projects.frnk.description": "Una base modular para Kotlin Multiplatform con UI headless, backends intercambiables y arquitectura MVI — pensada para acelerar el desarrollo de apps indie. Código abierto en GitHub.",
+  "projects.still.tagline": "Rastreador de caducidad de alimentos",
+  "projects.still.description": "Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.",
   "projects.store.getItOn": "Disponible en",
   "projects.store.availableOn": "Disponible en",
   "projects.store.comingSoon": "App Store — Próximamente",
+  "projects.store.viewSourceOn": "Ver código en",
 
   "skills.heading": "Stack técnico",
   "skills.subheading": "",

@@ -78,11 +78,14 @@
             'experience.role4.bullet3': 'Automated the release scheduling pipeline with Fastlane together with the product team.',
             'projects.heading': 'Personal Projects',
             'projects.subheading': '',
-            'projects.freshtrack.tagline': 'Food expiration tracker',
-            'projects.freshtrack.description': "Track what's in your fridge and pantry, get timely reminders before food expires, and cut down on waste.",
+            'projects.frnk.tagline': 'Open-source KMP toolkit',
+            'projects.frnk.description': 'A modular Kotlin Multiplatform foundation with headless UI, pluggable backends, and MVI architecture — built to accelerate indie app development. Open-source on GitHub.',
+            'projects.still.tagline': 'Food Expiry Tracker',
+            'projects.still.description': "Track what's in your fridge and pantry, get timely reminders before food expires, and cut down on waste.",
             'projects.store.getItOn': 'Get it on',
             'projects.store.availableOn': 'Available on',
             'projects.store.comingSoon': 'App Store — Coming soon',
+            'projects.store.viewSourceOn': 'View source on',
             'skills.heading': 'Tech stack',
             'skills.subheading': '',
             'skills.group.core': 'Core',
@@ -146,11 +149,14 @@
             'experience.role4.bullet3': 'Automaticé el pipeline de publicación con Fastlane junto al equipo de producto.',
             'projects.heading': 'Proyectos Personales',
             'projects.subheading': '',
-            'projects.freshtrack.tagline': 'Control de caducidad de alimentos',
-            'projects.freshtrack.description': 'Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.',
+            'projects.frnk.tagline': 'Toolkit KMP de código abierto',
+            'projects.frnk.description': 'Una base modular para Kotlin Multiplatform con UI headless, backends intercambiables y arquitectura MVI — pensada para acelerar el desarrollo de apps indie. Código abierto en GitHub.',
+            'projects.still.tagline': 'Rastreador de caducidad de alimentos',
+            'projects.still.description': 'Lleva el control de lo que hay en tu refri y alacena, recibe recordatorios antes de que los alimentos caduquen y reduce el desperdicio.',
             'projects.store.getItOn': 'Disponible en',
             'projects.store.availableOn': 'Disponible en',
             'projects.store.comingSoon': 'App Store — Próximamente',
+            'projects.store.viewSourceOn': 'Ver código en',
             'skills.heading': 'Stack técnico',
             'skills.subheading': '',
             'skills.group.core': 'Base',
@@ -342,7 +348,17 @@
             link.addEventListener('click', function () {
                 logEvent('select_content', {
                     content_type: 'store_link',
-                    content_id: 'google_play_freshtrack'
+                    content_id: 'google_play_still'
+                });
+            });
+        });
+
+        // FRNK GitHub source link
+        $$('.store-btn--github').forEach(function (link) {
+            link.addEventListener('click', function () {
+                logEvent('select_content', {
+                    content_type: 'source_link',
+                    content_id: 'github_frnk'
                 });
             });
         });
