@@ -9,7 +9,6 @@
   "a11y.menuToggle": "Abrir menú de navegación",
   "a11y.frnkLanding": "Landing page de frnk",
   "a11y.frnkSource": "Código fuente de frnk en GitHub",
-  "a11y.frnkBackHome": "Volver al inicio del portafolio",
   "a11y.frnkViewSource": "Ver frnk en GitHub",
   "a11y.frnkChangelog": "Ver el changelog de frnk en GitHub",
 
@@ -99,7 +98,6 @@
   "frnk.hero.tagline": "Un toolkit modular de Kotlin Multiplatform para apps móviles indie y de equipos pequeños.",
   "frnk.hero.description": "UI headless en Compose, backends intercambiables (Supabase + Firebase), presentación MVI, persistencia con SQLDelight y monetización con RevenueCat — conectados con Koin para que el trabajo del día a día se enfoque en funciones, no en plomería.",
   "frnk.hero.ctaPrimary": "Ver en GitHub",
-  "frnk.hero.ctaSecondary": "Volver al portafolio",
   "frnk.about.heading": "Por qué frnk",
   "frnk.about.body": "frnk da a las apps indie y de equipos pequeños una base de compilación rápida, una arquitectura limpia, modularización agresiva y una capa de presentación MVI estandarizada — para que el trabajo del día a día se enfoque en funciones y lógica de negocio.",
   "frnk.features.heading": "Qué incluye",
