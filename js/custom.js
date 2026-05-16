@@ -36,6 +36,9 @@
             'a11y.menuToggle': 'Toggle navigation menu',
             'a11y.frnkLanding': 'FRNK landing page',
             'a11y.frnkSource': 'FRNK source on GitHub',
+            'a11y.frnkBackHome': 'Back to portfolio home',
+            'a11y.frnkViewSource': 'View FRNK on GitHub',
+            'a11y.frnkChangelog': 'View FRNK changelog on GitHub',
             'nav.about': 'About',
             'nav.experience': 'Experience',
             'nav.projects': 'Projects',
@@ -101,7 +104,39 @@
             'contact.emailLabel': 'Email',
             'contact.linkedinLabel': 'LinkedIn',
             'contact.githubLabel': 'GitHub',
-            'footer.rights': 'All rights reserved.'
+            'footer.rights': 'All rights reserved.',
+            'frnk.meta.title': 'FRNK — Kotlin Multiplatform client toolkit',
+            'frnk.meta.description': 'FRNK is a modular Kotlin Multiplatform + Compose Multiplatform toolkit with headless UI, pluggable Supabase and Firebase backends, MVI architecture, SQLDelight persistence, and RevenueCat monetization — built for indie and small-team mobile devs.',
+            'frnk.hero.eyebrow': 'Open-source KMP client toolkit',
+            'frnk.hero.statusChip': 'v0.1.0 · pre-1.0',
+            'frnk.hero.title': 'FRNK',
+            'frnk.hero.tagline': 'A modular Kotlin Multiplatform toolkit for indie and small-team mobile apps.',
+            'frnk.hero.description': 'Headless Compose UI, pluggable Supabase + Firebase backends, MVI presentation, SQLDelight persistence, and RevenueCat monetization — wired together via Koin so day-to-day work stays on features, not plumbing.',
+            'frnk.hero.ctaPrimary': 'View on GitHub',
+            'frnk.hero.ctaSecondary': 'Back to portfolio',
+            'frnk.about.heading': 'Why FRNK',
+            'frnk.about.body': 'FRNK gives indie / small-team apps a fast-compiling foundation with a clean architecture, aggressive modularization, and a standardized MVI presentation layer — so the day-to-day work stays on features and business logic.',
+            'frnk.features.heading': 'What it ships',
+            'frnk.features.mvi.title': 'MVI presentation engine',
+            'frnk.features.mvi.body': 'MviContract, MviViewModel<S, A, E>, and ObserveAsEvents ship in shared-ui-atoms. New screens subclass MviViewModel and stay consistent across the toolkit.',
+            'frnk.features.ui.title': 'Headless Compose UI',
+            'frnk.features.ui.body': 'Built on compose-unstyled so consuming apps bring their own design system instead of fighting opinionated defaults.',
+            'frnk.features.backends.title': 'Pluggable backends',
+            'frnk.features.backends.body': 'Supabase and Firebase implementations sit behind capability interfaces. Pick one at runtime via BackendChoice without touching feature code.',
+            'frnk.features.modularity.title': 'Strict api / impl modules',
+            'frnk.features.modularity.body': '*-api modules expose only interfaces and DTOs; *-impl modules carry the concrete bindings — wired via Koin and swappable per project.',
+            'frnk.features.di.title': 'One-shot Koin bootstrap',
+            'frnk.features.di.body': 'frnkModules(BackendChoice) and initializeFrnk() set up DI in one call so host apps stand up the toolkit in their Application class.',
+            'frnk.features.persistence.title': 'SQLDelight persistence',
+            'frnk.features.persistence.body': 'Multiplatform driver factory and Multiplatform Settings key/value store. The toolkit owns the driver; your host app owns the schema.',
+            'frnk.features.monetization.title': 'RevenueCat monetization',
+            'frnk.features.monetization.body': 'Entitlement and feature-gate interfaces with a RevenueCat implementation behind them — paywall logic stays out of feature modules.',
+            'frnk.features.ci.title': 'Fast CI + pre-commit ktlint',
+            'frnk.features.ci.body': 'A single CI job runs compileAndroidMain and testDebugUnitTest; ktlint formatting is enforced via an auto-installed git pre-commit hook.',
+            'frnk.stack.heading': 'Built with',
+            'frnk.status.heading': 'Project status',
+            'frnk.status.body': 'Early / pre-1.0. APIs may shift between minor versions — pre-1.0 policy is that 0.x.0 may break API while 0.x.y stays additive and fix-only.',
+            'frnk.status.changelogLink': 'View CHANGELOG on GitHub'
         },
         es: {
             'meta.title': 'Juan Diego Garita — Ingeniero Senior Android / KMP',
@@ -111,6 +146,9 @@
             'a11y.menuToggle': 'Abrir menú de navegación',
             'a11y.frnkLanding': 'Landing page de FRNK',
             'a11y.frnkSource': 'Código fuente de FRNK en GitHub',
+            'a11y.frnkBackHome': 'Volver al inicio del portafolio',
+            'a11y.frnkViewSource': 'Ver FRNK en GitHub',
+            'a11y.frnkChangelog': 'Ver el changelog de FRNK en GitHub',
             'nav.about': 'Sobre Mí',
             'nav.experience': 'Experiencia',
             'nav.projects': 'Proyectos',
@@ -176,7 +214,39 @@
             'contact.emailLabel': 'Correo',
             'contact.linkedinLabel': 'LinkedIn',
             'contact.githubLabel': 'GitHub',
-            'footer.rights': 'Todos los derechos reservados.'
+            'footer.rights': 'Todos los derechos reservados.',
+            'frnk.meta.title': 'FRNK — Toolkit cliente para Kotlin Multiplatform',
+            'frnk.meta.description': 'FRNK es un toolkit modular de Kotlin Multiplatform + Compose Multiplatform con UI headless, backends intercambiables de Supabase y Firebase, arquitectura MVI, persistencia con SQLDelight y monetización con RevenueCat — pensado para desarrolladores móviles indie y equipos pequeños.',
+            'frnk.hero.eyebrow': 'Toolkit cliente KMP de código abierto',
+            'frnk.hero.statusChip': 'v0.1.0 · pre-1.0',
+            'frnk.hero.title': 'FRNK',
+            'frnk.hero.tagline': 'Un toolkit modular de Kotlin Multiplatform para apps móviles indie y de equipos pequeños.',
+            'frnk.hero.description': 'UI headless en Compose, backends intercambiables (Supabase + Firebase), presentación MVI, persistencia con SQLDelight y monetización con RevenueCat — conectados con Koin para que el trabajo del día a día se enfoque en funciones, no en plomería.',
+            'frnk.hero.ctaPrimary': 'Ver en GitHub',
+            'frnk.hero.ctaSecondary': 'Volver al portafolio',
+            'frnk.about.heading': 'Por qué FRNK',
+            'frnk.about.body': 'FRNK da a las apps indie y de equipos pequeños una base de compilación rápida, una arquitectura limpia, modularización agresiva y una capa de presentación MVI estandarizada — para que el trabajo del día a día se enfoque en funciones y lógica de negocio.',
+            'frnk.features.heading': 'Qué incluye',
+            'frnk.features.mvi.title': 'Motor de presentación MVI',
+            'frnk.features.mvi.body': 'MviContract, MviViewModel<S, A, E> y ObserveAsEvents viven en shared-ui-atoms. Cada pantalla nueva extiende MviViewModel y mantiene consistencia en todo el toolkit.',
+            'frnk.features.ui.title': 'UI headless en Compose',
+            'frnk.features.ui.body': 'Construido sobre compose-unstyled para que las apps consumidoras usen su propio design system en vez de pelear con valores por defecto opinados.',
+            'frnk.features.backends.title': 'Backends intercambiables',
+            'frnk.features.backends.body': 'Implementaciones de Supabase y Firebase detrás de interfaces de capacidades. Elige una en tiempo de ejecución con BackendChoice sin tocar el código de las features.',
+            'frnk.features.modularity.title': 'Módulos api / impl estrictos',
+            'frnk.features.modularity.body': 'Los módulos *-api exponen sólo interfaces y DTOs; los *-impl traen las implementaciones concretas — todo cableado vía Koin e intercambiable por proyecto.',
+            'frnk.features.di.title': 'Bootstrap de Koin de un solo paso',
+            'frnk.features.di.body': 'frnkModules(BackendChoice) e initializeFrnk() montan el DI en una sola llamada para que la app host levante el toolkit en su Application.',
+            'frnk.features.persistence.title': 'Persistencia con SQLDelight',
+            'frnk.features.persistence.body': 'Driver factory multiplataforma y key/value store con Multiplatform Settings. El toolkit posee el driver; la app host posee el esquema.',
+            'frnk.features.monetization.title': 'Monetización con RevenueCat',
+            'frnk.features.monetization.body': 'Interfaces de entitlements y feature gates con una implementación de RevenueCat detrás — la lógica de paywall se mantiene fuera de los módulos de features.',
+            'frnk.features.ci.title': 'CI rápido + ktlint pre-commit',
+            'frnk.features.ci.body': 'Un único job de CI corre compileAndroidMain y testDebugUnitTest; el formato con ktlint se enforza mediante un hook de git pre-commit auto-instalado.',
+            'frnk.stack.heading': 'Construido con',
+            'frnk.status.heading': 'Estado del proyecto',
+            'frnk.status.body': 'Etapa temprana / pre-1.0. Las APIs pueden cambiar entre versiones menores — la política pre-1.0 es que 0.x.0 puede romper la API mientras 0.x.y se mantiene aditivo y de bugfixes.',
+            'frnk.status.changelogLink': 'Ver CHANGELOG en GitHub'
         }
     };
 
@@ -192,8 +262,10 @@
 
     /* ---------- i18n ---------- */
     function loadDict(lang) {
-        // Try fetch; fall back to embedded dictionary on failure (file://, offline, etc.)
-        return fetch('i18n/' + lang + '.json', { cache: 'no-cache' })
+        // Sub-pages set <html data-i18n-base="../"> so the same script can find
+        // i18n/*.json from any nesting level. Root pages leave it unset.
+        var base = document.documentElement.getAttribute('data-i18n-base') || '';
+        return fetch(base + 'i18n/' + lang + '.json', { cache: 'no-cache' })
             .then(function (res) {
                 if (!res.ok) throw new Error('fetch failed: ' + res.status);
                 return res.json();
@@ -315,8 +387,8 @@
 
         // ---------- Analytics: link tracking ----------
 
-        // Resume downloads
-        $$('a[href="resume/jd.pdf"]').forEach(function (link) {
+        // Resume downloads (root uses "resume/jd.pdf"; sub-pages use "../resume/jd.pdf" or "/resume/jd.pdf")
+        $$('a[href$="resume/jd.pdf"]').forEach(function (link) {
             link.addEventListener('click', function () {
                 logEvent('file_download', {
                     file_name: 'jd.pdf',
@@ -326,12 +398,15 @@
             });
         });
 
-        // Section navigation
-        $$('.nav-menu a[href^="#"]').forEach(function (link) {
+        // Section navigation (root uses "#about"; sub-pages use "/#about")
+        $$('.nav-menu a').forEach(function (link) {
+            var href = link.getAttribute('href') || '';
+            var hashIdx = href.indexOf('#');
+            if (hashIdx < 0) return;
             link.addEventListener('click', function () {
                 logEvent('select_content', {
                     content_type: 'nav_section',
-                    content_id: link.getAttribute('href').substring(1)
+                    content_id: href.substring(hashIdx + 1)
                 });
             });
         });
