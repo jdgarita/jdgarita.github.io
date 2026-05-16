@@ -92,6 +92,7 @@
 
   "frnk.meta.title": "frnk — Toolkit cliente para Kotlin Multiplatform",
   "frnk.meta.description": "frnk es un toolkit modular de Kotlin Multiplatform + Compose Multiplatform con UI headless, backends intercambiables de Supabase y Firebase, arquitectura MVI, persistencia con SQLDelight y monetización con RevenueCat — pensado para desarrolladores móviles indie y equipos pequeños.",
+  "frnk.hero.logoAlt": "Logo de frnk",
   "frnk.hero.eyebrow": "Toolkit cliente KMP de código abierto",
   "frnk.hero.statusChip": "v0.1.0 · pre-1.0",
   "frnk.hero.title": "frnk",

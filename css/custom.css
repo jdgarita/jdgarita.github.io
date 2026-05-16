@@ -476,6 +476,14 @@ ul {
     text-align: center;
 }
 
+.frnk-hero-logo {
+    display: block;
+    width: clamp(96px, 18vw, 160px);
+    height: auto;
+    margin: 0 auto var(--s-5);
+    border-radius: var(--r-lg);
+}
+
 .hero-eyebrow {
     display: inline-block;
     padding: var(--s-1) var(--s-3);
