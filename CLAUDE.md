@@ -18,12 +18,14 @@ Page sections, in order: Hero → About → Experience → Projects → Skills �
 
 Tracked, load-bearing:
 - `index.html` — single-page site, all sections inline, semantic landmarks
+- `frnk/index.html` — sub-page for the frnk project, reuses the root `css/` and `js/`
 - `css/custom.css` — token-driven stylesheet (CSS custom properties)
 - `js/custom.js` — theme toggle, language toggle, i18n loader, mobile nav
-- `i18n/en.json`, `i18n/es.json` — all user-visible copy
+- `i18n/en.json`, `i18n/es.json` — all user-visible copy (root + sub-pages share one dictionary)
 - `css/font-awesome.min.css` + `fonts/fontawesome-*` — FontAwesome 4.7.0 (includes `.woff2`)
-- `image/jd.png`, `image/android.ico` — profile photo and favicon
+- `image/jd.png`, `image/frnk.png`, `image/android.ico` — profile photo, frnk logo, and favicon (sub-pages reference these via `../image/…`)
 - `resume/jd.pdf` — downloadable resume
+- `.github/workflows/claude-code-review.yml`, `claude.yml` — GitHub Actions that run Claude Code on PRs (no app-side CI)
 
 Untracked and **should be ignored** — leftovers from an abandoned Kobweb (Kotlin/JS) rewrite and an old Firebase experiment. Do not treat these as the project:
 - `site/`, `build/`, `.gradle/`, `kotlin-js-store/`, `node_modules/`
@@ -53,6 +55,15 @@ Structural rules:
 - Whenever you add or rename a key, mirror the change in `FALLBACK.en` / `FALLBACK.es` inside `js/custom.js` — they are used as the dictionary when `fetch('i18n/*.json')` fails (e.g. `file://` previews).
 
 Experience content comes from `resume/jd.pdf` — Swiftly, Mode, BodyBuilding.com, Trusona. Update the JSON when the PDF changes, don't introduce placeholders.
+
+## Sub-pages
+
+Sub-pages (currently just `frnk/index.html`) reuse the root `css/custom.css` and `js/custom.js` so a single dictionary, theme, and analytics setup serve every page.
+
+- Reference assets with relative paths: `../css/custom.css`, `../js/custom.js`, `../image/android.ico`.
+- Set `<html lang="…" data-i18n-base="../">` so `js/custom.js` resolves `fetch('../i18n/en.json')` instead of looking next to the sub-page.
+- Mirror the no-FOUC inline theme/lang script from the root `index.html` `<head>` so first paint matches.
+- Add new sub-page strings under a namespaced prefix in **both** `i18n/en.json` and `i18n/es.json` (e.g. `frnk.hero.title`), and mirror them in `FALLBACK.en` / `FALLBACK.es` inside `js/custom.js`.
 
 ## Theme & language toggles
 
