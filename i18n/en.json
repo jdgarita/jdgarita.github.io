@@ -5,6 +5,8 @@
   "a11y.themeToggle": "Toggle light / dark theme",
   "a11y.langToggle": "Switch language",
   "a11y.menuToggle": "Toggle navigation menu",
+  "a11y.frnkLanding": "FRNK landing page",
+  "a11y.frnkSource": "FRNK source on GitHub",
   "nav.about": "About",
   "nav.experience": "Experience",
   "nav.projects": "Projects",

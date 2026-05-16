@@ -34,6 +34,8 @@
             'a11y.themeToggle': 'Toggle light / dark theme',
             'a11y.langToggle': 'Switch language',
             'a11y.menuToggle': 'Toggle navigation menu',
+            'a11y.frnkLanding': 'FRNK landing page',
+            'a11y.frnkSource': 'FRNK source on GitHub',
             'nav.about': 'About',
             'nav.experience': 'Experience',
             'nav.projects': 'Projects',
@@ -107,6 +109,8 @@
             'a11y.themeToggle': 'Cambiar tema claro / oscuro',
             'a11y.langToggle': 'Cambiar idioma',
             'a11y.menuToggle': 'Abrir menú de navegación',
+            'a11y.frnkLanding': 'Landing page de FRNK',
+            'a11y.frnkSource': 'Código fuente de FRNK en GitHub',
             'nav.about': 'Sobre Mí',
             'nav.experience': 'Experiencia',
             'nav.projects': 'Proyectos',
@@ -347,31 +351,30 @@
             });
         });
 
-        // Google Play store link
+        // Project card outbound links — unified under one content_type so
+        // they group in GA4. content_id still distinguishes each target.
         $$('.store-btn--play').forEach(function (link) {
             link.addEventListener('click', function () {
                 logEvent('select_content', {
-                    content_type: 'store_link',
+                    content_type: 'project_link',
                     content_id: 'google_play_still'
                 });
             });
         });
 
-        // FRNK GitHub source link
         $$('.store-btn--github').forEach(function (link) {
             link.addEventListener('click', function () {
                 logEvent('select_content', {
-                    content_type: 'source_link',
+                    content_type: 'project_link',
                     content_id: 'github_frnk'
                 });
             });
         });
 
-        // FRNK landing page link
         $$('.store-btn--site').forEach(function (link) {
             link.addEventListener('click', function () {
                 logEvent('select_content', {
-                    content_type: 'site_link',
+                    content_type: 'project_link',
                     content_id: 'landing_frnk'
                 });
             });
