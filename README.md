@@ -5,7 +5,7 @@ Live at <https://jdgarita.dev>.
 
 ## What it is
 
-A single-page static site, hand-written in vanilla HTML, CSS, and JavaScript. No build step, no package manager, no framework, no tests, no CI. You edit the source files and push — GitHub Pages serves the repo root directly.
+A single-page static site, hand-written in vanilla HTML, CSS, and JavaScript. No build step, no package manager, no framework, no tests, no CI. You edit the source files directly.
 
 Features:
 
@@ -52,10 +52,6 @@ Elements reference keys via:
 ```
 
 When you add a new key, also mirror it in the `FALLBACK.en` / `FALLBACK.es` objects inside `js/custom.js` so `file://` previews keep working.
-
-## Deployment
-
-`master` is the published branch. `git push` to `master` is the deploy — there's no build or release script. The current redesign lives on `legacy`; merge to `master` to ship.
 
 ## Stack
 
