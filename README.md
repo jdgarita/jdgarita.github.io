@@ -1,7 +1,7 @@
-# jdgarita.github.io
+# jdgarita.dev
 
 Personal landing page for **Juan Diego Garita** — Senior Android / Kotlin Multiplatform engineer.  
-Live at <https://jdgarita.github.io>.
+Live at <https://jdgarita.dev>.
 
 ## What it is
 
