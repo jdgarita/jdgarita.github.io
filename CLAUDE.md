@@ -8,11 +8,10 @@ A plain static personal site for `jdgarita.dev`, served by GitHub Pages directly
 
 Page sections, in order: Hero → About → Experience → Projects → Skills → Contact. Experience and Skills alternate on the `section-alt` background so the banding stays consistent.
 
-## Branches and deployment
+## Branches
 
-- `master` is the published branch. Pushing to `master` deploys via GitHub Pages.
+- `main` is the default branch.
 - `legacy` is the working branch for the 2026 redesign.
-- There is no deploy script; `git push` to `master` is the deploy.
 
 ## Repo layout
 
