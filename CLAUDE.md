@@ -82,7 +82,7 @@ Firebase Analytics (GA4 backend) is loaded via the **compat CDN** (v11.6.0) — 
 - Initialization and the `logEvent` helper live in `js/custom.js` inside the IIFE, guarded by `typeof firebase !== 'undefined'` so the site degrades gracefully if the SDK is blocked (ad blockers, `file://`).
 - Pageviews are tracked automatically on init.
 - Custom events: `file_download` (resume), `select_content` (nav sections, contact links, store link), `theme_toggle`, `lang_toggle`, `mobile_nav_toggle`.
-- The Firebase web API key is safe to commit — it's restricted by domain, not a secret.
+- The Firebase web API key is safe to commit — Firebase web keys identify the project and aren't secrets. The key (`Browser key (auto created by Firebase)`) is restricted by **API target** (which Google APIs it may call, e.g. `firebaseinstallations`), **not** by HTTP referrer/domain — so changing domains (e.g. → `jdgarita.dev`) does not break analytics.
 
 ## Icons
 
